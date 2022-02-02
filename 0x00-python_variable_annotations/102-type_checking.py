@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Basic annotation: type checking"""
+""" Basic annotations """
 from typing import Tuple, List
 
 
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
-    """Use mypy to validate the following piece of
-    code and apply any necessary changes."""
+    """ Use mypy to validate the following piece of
+        code and apply any necessary changes. """
     zoomed_in: List = [
         ele for ele in lst
         for i in range(factor)
