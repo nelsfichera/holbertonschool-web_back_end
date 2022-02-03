@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-""" Coroutine which loops 10 times, 
-        asynchronously wait one second, 
-        then yield a random number between 0 and 10 
+""" Coroutine which loops 10 times,
+        asynchronously wait one second,
+        then yield a random number between 0 and 10
         using the random module. """
 import asyncio
 from random import uniform
