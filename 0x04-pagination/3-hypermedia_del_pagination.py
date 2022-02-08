@@ -41,7 +41,8 @@ class Server:
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """ Return a dictionary with the following key-value pairs:
             index: the index of the first item on the current page
-            next: the index of the first item after the last item on the current page
+            next: the index of the first item 
+	    	after the last item on the current page
             page_size: the current page size
             data: the actual page of the dataset
         """
