@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Implement get_page, take 2 ints returns list"""
 import csv
 from typing import List, Tuple
 

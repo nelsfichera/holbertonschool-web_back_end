@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Implement get_hyper, take 2 ints returns dict"""
 import csv
 from math import ceil
 from typing import List, Tuple
