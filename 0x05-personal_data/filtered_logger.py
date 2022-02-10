@@ -2,7 +2,7 @@
 '''
 Module for handling Personal Data:
 filters data, returning log message obfuscated
-gets logger, does not propogate messages 
+gets logger, does not propogate messages
 parametized by PII_FIELDS
 main secures to secure database to read a users' table
 db protected by username and password env vars on server

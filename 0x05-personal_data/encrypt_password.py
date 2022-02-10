@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-'''Encrypting passwords
+'''Hashing passwords,
+returns salted hashed password
+which is a byte string
+validates that provided password
+matches hashed password
 '''
 import bcrypt
 
