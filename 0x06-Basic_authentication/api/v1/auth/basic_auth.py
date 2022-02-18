@@ -54,12 +54,12 @@ class BasicAuth(Auth):
         """
         if decoded_base64_authorization_header is None:
             return None, None
-            
+
         if not isinstance(decoded_base64_authorization_header, str):
             return None, None
 
         if ':' not in decoded_base64_authorization_header:
-             return None, None
+            return None, None
 
         credentials = decoded_base64_authorization_header.split(':', 1)
 
@@ -72,13 +72,13 @@ class BasicAuth(Auth):
         email and password
         """
         if user_email is None or not isinstance(user_email, str):
-             return None
+            return None
 
         if user_pwd is None or not isinstance(user_pwd, str):
-             return None
+            return None
 
         try:
-             found_users = User.search({'email': user_email})
+            found_users = User.search({'email': user_email})
         except Exception:
             return None
 
