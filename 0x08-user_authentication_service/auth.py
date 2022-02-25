@@ -6,9 +6,7 @@ holbertonschool-web_back_end
 """
 
 import bcrypt
-from typing import ByteString
 from db import DB
-from sqlalchemy.exc import InvalidRequestError
 from sqlalchemy.orm.exc import NoResultFound
 from user import User
 import uuid
@@ -82,7 +80,7 @@ class Auth:
                     return False
             else:
                 False
-        except Exception as e:
+        except Exception:
             return False
 
     def create_session(self, email: str) -> str:
@@ -119,7 +117,7 @@ class Auth:
         try:
             user = self._db.find_user_by(session_id=session_id)
             return user
-        except Exception as e:
+        except Exception:
             return None
 
     def destroy_session(self, user_id: int) -> None:
@@ -129,12 +127,12 @@ class Auth:
             return Non
         """
         if not user_id:
-            return None
+            return
         try:
-            user = self._db.update_user(user_id, session_id=None)
-            return None
-        except Exception as e:
-            return None
+            user = self._db.find_user_by(id=user_id)
+            self._db.update_user(user.id, session_id=None)
+        except Exception:
+            return
 
     def get_reset_password_token(self, email: str) -> str:
         """[Generate reset password token]
@@ -150,7 +148,7 @@ class Auth:
             user = self._db.find_user_by(email=email)
             uuid = _generate_uuid()
             self._db.update_user(user.id, reset_token=uuid)
-        except Exception as e:
+        except Exception:
             raise ValueError
         return uuid
 
@@ -171,6 +169,6 @@ class Auth:
             self._db.update_user(user.id, hashed_password=hashed)
             self._db.update_user(user.id, reset_token=None)
 
-        except Exception as e:
+        except Exception:
             raise ValueError
-        return None
+            return None
