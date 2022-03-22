@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" MongoDB Operations with Python using pymongo """
+""" MongoDB using pymongo """
 
 
 def schools_by_topic(mongo_collection, topic):
