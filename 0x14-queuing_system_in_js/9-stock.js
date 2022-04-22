@@ -1,4 +1,3 @@
-
 import express from 'express';
 import redis from 'redis';
 import { promisify } from 'util';
@@ -83,8 +82,7 @@ app.get('/list_products/:itemId', async (req, res) => {
   }
 
   const currentStock = await getCurrentReservedStockById(itemId);
-  const stock =
-    currentStock !== null ? currentStock : item.initialAvailableQuantity;
+  const stock = currentStock !== null ? currentStock : item.initialAvailableQuantity;
 
   item.currentQuantity = stock;
   res.json(item);
