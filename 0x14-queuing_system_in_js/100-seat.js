@@ -1,4 +1,3 @@
-
 import express from 'express';
 import kue from 'kue';
 import redis from 'redis';

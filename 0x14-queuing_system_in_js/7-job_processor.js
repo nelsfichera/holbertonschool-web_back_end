@@ -1,4 +1,3 @@
-
 import kue from 'kue';
 
 const blacklistedNum = ['4153518780', '4153518781'];
